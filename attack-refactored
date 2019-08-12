@@ -1,0 +1,23 @@
+# improving an RPG attack program to give it more options and conditions
+
+import random
+
+playerhp = 260
+enemyatklo = 20
+enemyatkhi = 40
+
+while playerhp > 0:
+  dmg = random.randrange(enemyatklo, enemyatkhi)
+  playerhp = playerhp - dmg
+
+  print("Enemy strikes for", dmg, "points of damage. Current HP is", playerhp)
+
+  if playerhp <= 35 and playerhp >= 25:
+    print("You have", playerhp, "points of damage! There's a healer at the inn nearby! Get 'em outta here! ")
+    break
+  elif playerhp <= 5 and playerhp >= -5:
+    print("Ya dead!")
+    break
+  elif playerhp < -5:
+    print("You got knocked the flargn out!")
+    break
